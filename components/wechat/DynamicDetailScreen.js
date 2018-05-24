@@ -1,7 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet,View, Text,Button,Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HeadScreen from './HeadScreen';
 
 //动态组件详情组件
 export default class DynamicScreen extends React.Component {

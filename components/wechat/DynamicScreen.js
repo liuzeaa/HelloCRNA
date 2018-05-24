@@ -1,20 +1,19 @@
 import React from 'react';
 import { FlatList, StyleSheet,View, Text,Button,Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HeadScreen from './HeadScreen';
 
 //动态组件
 export default class DynamicScreen extends React.Component {
     static navigationOptions = {
         title: '动态',
-        tabBarIcon: ({tintColor}) => (
+        tabBarIcon: ({ focused, tintColor }) => (
             <Icon name="ios-text-outline" size={26} color={tintColor} />
-        ),
+        )
     }
+
     render(){
         return (
             <View style={styles.container}>
-                <HeadScreen></HeadScreen>
                 <View style={styles.container}>
                     <FlatList
                         data={[

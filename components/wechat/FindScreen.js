@@ -1,20 +1,18 @@
 import React from 'react';
 import { FlatList, StyleSheet,View, Text,Button,Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HeadScreen from './HeadScreen';
 
 //发现组件
 export default class FindScreen extends React.Component {
     static navigationOptions = {
         title: '发现',
-        tabBarIcon: ({tintColor}) => (
+        tabBarIcon: ({ focused, tintColor }) => (
             <Icon name="ios-compass-outline" size={26} color={tintColor} />
         ),
     };
     render(){
         return (
             <View style={[styles.container,styles.findBody]}>
-                <HeadScreen title="发现"></HeadScreen>
                 <View style={styles.findView}>
                     <Icon style={styles.findViewIcon} name="ios-contacts-outline" color="#3399FF" size={22} />
                     <Text style={styles.findViewText}>朋友圈</Text>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { StyleSheet } from 'react-native'
 import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 import FindScreen from  './components/wechat/FindScreen'
 import DynamicScreen from  './components/wechat/DynamicScreen'
 import ContactsScreen from  './components/wechat/ContactsScreen'
@@ -23,15 +24,16 @@ const RootTabs = createMaterialTopTabNavigator(
         }
     },
     {
-        initialRouteName: 'contacts',
         tabBarPosition: 'bottom',//选项卡位置
         animationEnabled: true,
         tabBarOptions: {
-            activeTintColor: '#28a745',//选中颜色
-            inactiveTintColor:'#232323',//未选中颜色
+            activeTintColor: '#02A8F3',//选中颜色
+            inactiveTintColor:'#757575',//未选中颜色
             //设置选项卡的背景颜色
             style: {
-                backgroundColor: '#F2F2F2'
+                backgroundColor: '#FCFCFC',
+                borderTopWidth:1,
+                borderTopColor:'#E8E8E8'
             },
             //去掉安卓点击之后的小黄线
             indicatorStyle: {
@@ -41,12 +43,13 @@ const RootTabs = createMaterialTopTabNavigator(
             showIcon:true,
             //选项卡样式
             tabStyle:{
-                height:46,
+                height:50,
+                paddingBottom:10
             },
             //icon样式
             iconStyle:{
-                marginBottom:-6,
-                marginTop:10
+                marginBottom:-8,
+                marginTop:12
             }
         }
     });
@@ -54,12 +57,20 @@ const RootTabs = createMaterialTopTabNavigator(
 // myapp路由
 const MyApp = createStackNavigator({
     dynamicStack: {
-        screen: RootTabs
+        screen: RootTabs,
+        navigationOptions: ({navigation}) => ({
+            headerStyle: styles.headerBar,
+            headerTintColor: '#fff'
+        })
     },
     dynamicDetail: {
         path: 'people/:name',
         screen: DynamicDetailScreen,
     },
 });
-
+var styles = StyleSheet.create({
+    headerBar:{
+        backgroundColor:'#242529',
+    }
+})
 export default MyApp;

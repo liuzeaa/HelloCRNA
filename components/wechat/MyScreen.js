@@ -1,20 +1,18 @@
 import React from 'react';
 import { FlatList, StyleSheet,View, Text,Button,Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HeadScreen from './HeadScreen';
 
 //我的组件
 export default class DynamicScreen extends React.Component {
     static navigationOptions = {
         title: '我的',
-        tabBarIcon: ({tintColor}) => (
+        tabBarIcon: ({ focused, tintColor }) => (
             <Icon name="ios-person-outline" size={26} color={tintColor} />
         ),
     }
     render(){
         return (
             <View style={[styles.container,styles.findBody]}>
-                <HeadScreen title="我的"></HeadScreen>
                 <View style={styles.findView}>
                     <Icon style={[styles.findViewIcon,{flex:2}]} name="ios-contacts-outline" color="#3399FF" size={60} />
                     <View style={[styles.findViewText,{flex:8,justifyContent:'center'}]}>

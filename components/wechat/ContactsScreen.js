@@ -1,20 +1,18 @@
 import React from 'react';
 import { FlatList, StyleSheet,View, Text,Button,Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HeadScreen from './HeadScreen';
 
 //通讯录组件
 export default class ContactsScreen extends React.Component {
     static navigationOptions = {
         title: '通讯录',
-        tabBarIcon: ({tintColor}) => (
+        tabBarIcon: ({ focused, tintColor }) => (
             <Icon name="ios-contacts-outline" size={26} color={tintColor} />
         ),
     };
     render(){
         return (
             <View style={[styles.container,styles.findBody]}>
-                <HeadScreen title="通讯录"></HeadScreen>
                 <View style={styles.findView}>
                     <Icon style={styles.findViewIcon} name="md-person-add" color="#51BBE5" size={22} />
                     <Text style={styles.findViewText}>新的朋友</Text>
