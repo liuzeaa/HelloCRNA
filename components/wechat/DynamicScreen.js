@@ -36,6 +36,34 @@ export default class DynamicScreen extends React.Component {
                                 </View>
                             </View>
                         )}
+                        ItemSeparatorComponent={
+                            ()=>(
+                                <View style={{backgroundColor:'#EBEBEB',height:5}}>
+
+                                </View>
+                            )
+                        }
+                        ListEmptyComponent={
+                            ()=>(
+                                <View style={{flex:1}}>
+                                    <Text>暂无数据</Text>
+                                </View>
+                            )
+                        }
+                        ListFooterComponent={
+                            ()=>(
+                                <View style={{height:40,justifyContent:'center',alignItems:'center'}}>
+                                    <Text>我是有底线的</Text>
+                                </View>
+                            )
+                        }
+                        ListHeaderComponent={
+                            ()=>(
+                                <View style={{height:40,justifyContent:'center',alignItems:'center'}}>
+                                    <Text>有新动态</Text>
+                                </View>
+                            )
+                        }
                     />
                 </View>
             </View>
@@ -46,42 +74,66 @@ export default class DynamicScreen extends React.Component {
 //组件样式
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor:'#EBEBEB'
     },
     item: {
         flex:1,
         flexDirection:'row',
-        borderBottomWidth:6,
-        borderBottomColor:'#F2F2F2',
-        padding:10
+        padding:10,
+        backgroundColor:'#fff',
     },
     name:{
-        color:'#388BFF',
-        fontSize:16
+        color:'#59482E',
+        fontSize:14
     },
     text:{
         color:'#232323',
-        fontSize:16
+        fontSize:14,
+        marginTop:2
     },
     time:{
         color:'gray',
         fontSize:12,
         marginTop:8
     },
+    //动态组件图片
+    userphoto:{
+        width:40,
+        height:40,
+        tintColor:'#9E9E9E'
+    },
+    //头部组件+
+    headAdd:{
+        width: 24,
+        height: 24,
+        tintColor: '#fff',
+        marginRight:20,
+    },
     //发现组件样式
     findView:{
         backgroundColor:'#fff',
         marginTop:15,
         padding:10,
-        justifyContent:'center',
-        flexDirection:'row'
+        alignItems:'center',
+        flexDirection:'row',
+    },
+    findViewText2:{
+        flex:8,
     },
     findViewIcon:{
-        flex:1
+        width:24,
+        height:24,
+        marginRight:10
+    },
+    findViewIcon2:{
+        flex:2,
+        width:46,
+        height:46,
     },
     findViewText:{
-        flex:9,
-        marginTop:1
+        fontSize:18,
+        color:'#232323',
     },
     findBody:{
         backgroundColor:'#EBEBEB'
@@ -90,5 +142,9 @@ const styles = StyleSheet.create({
         marginTop:0,
         borderTopWidth:1,
         borderTopColor:'#EBEBEB'
+    },
+    //header样式
+    headerBar:{
+        backgroundColor:'#242529',
     }
 });
